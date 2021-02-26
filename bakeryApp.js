@@ -120,9 +120,9 @@
            return `<div>
            <div class="row">
            <div class="col-8">
-           <h4> Order Name:<small class="text-muted">${orderDesc.name}</small><br>
+           <h2> Order Name:<small class="text-muted">${orderDesc.name}</small><br>
            Baked by:<small class="text-muted">${orderDesc.baker}</small><br>
-           Delivery date:<small class="text-muted">${orderDesc.deliveryDate}</small></h4>
+           Delivery date:<small class="text-muted">${orderDesc.deliveryDate}</small></h2>
            </div>
            <div class="col-4">
            <button class="delete-order btn btn-danger btn-group-sm" 
@@ -145,10 +145,11 @@
               <li> Shape: ${cakeDesc.shape}</li>
               </ul>
               </div>
+              <br>
+              </div>
               <div class="col-4">
               <button class="delete-cake btn btn-danger btn-group-sm" id="delete-cake-${cakeDesc.id}"
               data-cake-id="${cakeDesc.id}" data-order-id="${orderDesc.id}"> Delete Cake</button>
-              </div>
               </div>`)
            });
            return cakeHtml.join('');
@@ -157,33 +158,89 @@
        static getNewCakeForm(orderDesc){
            return `<div class="form-group">
            <label for="new-cake-flavor-${orderDesc.id}">Flavor:</label><br>
-           <input class="form-control" type="text" id="new-cake-flavor-${orderDesc.id}">
-           </div>
+           <div class="input-group">
+        <select class="custom-select" id="new-cake-flavor-${orderDesc.id}">
+        <option selected>Choose..</option>
+        <option value="Vanilla">Vanilla</option>
+        <option value="Almond">Almond</option>
+        <option value="White">White</option>
+        <option value="Funfetti">Funfetti</option>
+        <option value="Chocolate">Chocolate</option>
+        <option value="Marble">Marble</option>
+        <option value="Red Velvet">Red Velvet</option>
+        <option value="Lemon">Lemon</option>
+        <option value="Strawberry">Strawberry</option>
+        <option value="Carrot">Carrot</option>
+          </select>
+          </div>
+          </div>
 
           <div class="form-group">
          <label for="new-cake-frosting-${orderDesc.id}">Frosting:</label><br>
-         <input class="form-control" type="text" id="new-cake-frosting-${orderDesc.id}">
+         <div class="input-group">
+         <select class="custom-select" id="new-cake-frosting-${orderDesc.id}">
+         <option selected>Choose..</option>
+        <option value="Perfect Vanilla">Perfect Vanilla</option>
+        <option value="Oreo">Oreo</option>
+        <option value="Cream Cheese">Cream Cheese</option>
+        <option value="Chocolate Cream Cheese">Chocolate Cream Cheese</option>
+        <option value="Mascarpone">Mascarpone</option>
+        <option value="Chocolate Fudge">Chocolate Fudge</option>
+        <option value="Oatmeal Cream Pie">Oatmeal Cream Pie</option>
+        <option value="Seven Layer Bar">Seven Layer Bar</option>
+        <option value="Circus Animal">Circus Animal</option>
+        <option value="Swiss Meringue Buttercream">Swiss Meringue Buttercream</option>
+          </select>
+          </div>
          </div>
          
          <div class="form-group">
          <label for="new-cake-layers-${orderDesc.id}">Number of Layers:</label><br>
-         <input class="form-control" type="text" id="new-layers-${orderDesc.id}">
+         <div class="input-group">
+         <select class="custom-select" id="new-layers-${orderDesc.id}">
+         <option selected>Choose..</option>
+        <option value="One">One</option>
+        <option value="Two">Two</option>
+        <option value="Three">Three</option>
+        <option value="Four">Four</option>
+        <option value="Five">Five</option>
+        <option value="Six">Six</option>
+        <option value="Seven">Seven</option>
+        <option value="Eight">Eight</option>
+        <option value="Nine">Nine</option>
+        <option value="Ten">Ten</option>
+         </select>
+         </div>
          </div>
          
          <div class="form-group">
          <label for="new-cake-shape-${orderDesc.id}">Shape of Cake:</label><br>
-         <input class="form-control" type="text" id="new-shape-${orderDesc.id}">
+         <div class="input-group">
+         <select class="custom-select" id="new-shape-${orderDesc.id}">
+         <option selected>Choose...</option>
+         <option value="Square">Square</option>
+         <option value="Circle">Circle</option>
+         <option value="Rectangle">Rectangle</option>
+         <option value="Bundt">Bundt</option>
+         <option value="Brownie">Brownie</option>
+         <option value="Cupcake">Cupcake</option>
+         <option value="Babka">Babka</option>
+         <option value="Las Vegas Special">Las Vegas Special</option>
+         <option value="Waffle">Waffle</option>
+         <option value="Donut">Donut</option>
+          </select>
           </div>
+           </div>
           
-          <div class="form-group">
-         <button class="form-control btn btn-primary btn-group-sm" id="add-cake-for-order-${orderDesc.id}" data-order-id="${orderDesc.id}">Add New Cake</button>
+          <div class="center">
+         <button class="btn btn-primary  btn-group-sm" id="add-cake-for-order-${orderDesc.id}" data-order-id="${orderDesc.id}">Add New Cake</button>
      </div>`;
    }
 
 static getOrderBox(orderDesc) {
     let orderHeader = DOMManager.getOrderHeader(orderDesc);
     let addCakeForm = DOMManager.getNewCakeForm(orderDesc);
-    let currentCakes = DOMManager.getCakeMarkupForOrder(orderDesc);
+    let currentCakes = DOMManager.getCakeMarkUpForOrder(orderDesc);
     return `<div class="card">
         <div class="card-header">
             ${orderHeader}
