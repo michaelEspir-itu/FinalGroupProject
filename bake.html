@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The LittleHands Bakery</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="cake.css">
+</head>
+<body class="container" style="text-align:center">
+    <h1 style="margin-top:20px">The Little Hands<small class="text-muted"> Bakery</small></h1>
+    <br>
+    <div class="row">
+        <div class="col">
+            <div id="new-cake" class="jumbotron">
+                <h2>New Cake Order</h2>
+                <div class="form-group">
+                    <label for="new-cake-order-name">Name of Order:</label>
+                    <input type="text" id="new-cake-order-name" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="baker-name">Baker Name:</label> 
+                    <input type="text" id="baker-name" class="form-control">
+                </div>                    
+                <div class="form-group">
+                    <label for="date-due">Delivery Date:</label>
+                    <input type="date" id="date-due" class="form-control">
+                </div>
+                <button id="create-new-cake" class="btn btn-primary btn-group-sm">Add Order</button> 
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div id="app"></div>
+        </div>
+    </div>
+    
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bakeryApp.js"></script>
+     
+
+    
+</body>
+</html>
