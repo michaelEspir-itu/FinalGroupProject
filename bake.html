@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minimalistic Bakery</title>
+    <title>Orders  | Minimalist Pâtisserie</title>
+
+    <!--Bootstrap-->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="cake.css">
 
@@ -14,16 +16,16 @@
 </head>
 
 <body class="container">
-
-    <nav class="navbar navbar-expand-lg navbar-light justify-content-between fixed-top">
+<!--Navbar is to make the page responsive-->
+    <nav class="navbar navbar-expand-lg  justify-content-between fixed-top navbar-light">
 
         <a class="navbar-brand" href="#">
-          <img src="https://cdn3.iconfinder.com/data/icons/party-87/512/Cake_cake_dessert_wedding_birthday_party-128.png" class="d-inline-block align-top">
+          <img src="https://cdn.dribbble.com/users/224774/screenshots/2593432/cake.png" class="d-inline-block align-top">
         </a>
-      <a class="navbar-brand" href="#">Minimalist Cake Shop</a>
+      <a class="navbar-brand"  id="company-name" href="#">Minimalist Pâtisserie</a>
 
       <button class="navbar-toggler" 
-      type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      type="button" data-toggle="collapse" data-target="#navbarNavDropdown">
         <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -32,6 +34,9 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Home</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About Us</a>
+          </li>
           <li class="nav-item active">
             <a class="nav-link" href="#">Orders<span class="sr-only">(current)</span></a>
           </li> 
@@ -39,13 +44,13 @@
             <a class="nav-link" href="#">Contact</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sign In</a>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">Sign In</a>
            
-            <div class="dropdown-menu bg-light">
+            <div class="dropdown-menu">
               <form class="form-inline">
-                <input class="form-control mr-sm-2" type="email" placeholder="Email">
+                <input class="form-control mr-sm-2" type="text" placeholder="Username">
                 <input class="form-control mr-sm-2" type="password" placeholder="Password"> 
-                <button id="submit" class="btn btn-outline-secondary my-2 my-sm-0 btn-sm" type="submit">Submit</button>
+                <button id="sign in" class="btn my-2 my-sm-0 btn-sm" type="submit">Sign In</button>
               </form>
             </div>
             </li>
@@ -53,9 +58,9 @@
       </div>
       </nav>
     
-      <br><br><br><br><br>
+      <br>
      
-    
+    <!--New Order Form-->
     <div class="row">
         <div class="col">
             <div id="new-cake" class="jumbotron">
@@ -63,7 +68,7 @@
                 <br>
                 <div class="form-group">
                     <label for="new-cake-order-name">Name of Order:</label>
-                    <input type="text" id="new-cake-order-name" class="form-control">
+                    <input type="text" id="new-cake-order-name" class="form-control" placeholder="e.g. Class Party">
                 </div>
 
                 <div class="form-group">
@@ -80,12 +85,12 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="date-due">Delivery Date:</label>
+                    <label for="date-due">Event Date:</label>
                     <input type="date" id="date-due" class="form-control">
                 </div>
                <br>
                <div class="center">
-                <button id="create-new-cake" class="btn btn-primary btn-group-sm">Add Order</button> 
+                <button id="create-new-cake" class="btn btn-primary btn-group-sm">Add New Order</button> 
             </div>
             </div>
         </div>
@@ -120,10 +125,11 @@
 
         <p class="footer-links">
             <a class="link-1" href="#">Home</a>
+            <a href="#">About Us</a>
             <a href="#">Orders</a>
             <a href="#">Contact</a>
           </p>
-          <p>Minimalist Cake Shop LV &copy; 2021</p>
+          <p>Minimalist Pâtisserie LV &copy; 2021</p>
         </div>
       </footer>
     

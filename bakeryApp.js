@@ -1,5 +1,5 @@
 /**
- * Utilities
+ * Utilities will store the function for generating new objects ids, otherwise it will be made global 
  */
 
  let utils = (function(){
@@ -25,11 +25,11 @@
  // New Order Model
 
  class Order {
-     constructor(id,name,baker,deliveryDate) {
+     constructor(id,name,baker,eventDate) {
          this.id = id;
          this.name = name;
          this.baker = baker;
-         this.deliveryDate = deliveryDate;
+         this.eventDate = eventDate;
          this.cakes = [];
 
      }
@@ -51,7 +51,7 @@
  }
 
  /**
-  *     Data Repository
+  *     Data Repository where orders are stored!
   */
 
   let orderRepo = [];
@@ -106,7 +106,7 @@
 
   function updateState(newState){
       // Note that every update to state
-      // will trigger a re- render in the DOM!
+      // is rendered in real time!
       currentState = newState;
       DOMManager.render();
   }
@@ -120,38 +120,39 @@
            return `<div>
            <div class="row">
            <div class="col-8">
-           <h4> Order Name:<small class="text-muted">${orderDesc.name}</small><br>
-           Baked by:<small class="text-muted">${orderDesc.baker}</small><br>
-           Delivery date:<small class="text-muted">${orderDesc.deliveryDate}</small></h4>
+           <h4><span>Order Name:</span> <small class="text-muted">${orderDesc.name}</small><br>
+           <span>Baked by:</span> <small class="text-muted">${orderDesc.baker}</small><br>
+           <span>Event Date:</span> <small class="text-muted">${orderDesc.eventDate}</small></h4>
            </div>
-           </div>
+           
 
            <div class="col-4">
            <button class="delete-order btn btn-danger btn-group-sm" 
-           id="delete-order-${orderDesc.id}" data-order-id="${orderDesc.id}"> Cancel Order</button>
-           
+           id="delete-order-${orderDesc.id}" data-order-id="${orderDesc.id}"> Cancel Cake Order</button>
+           </div>
            </div>
            </div>
            `;
        }
-
-       static getCakeMarkUpForOrder(orderDesc){
+//We render the orders on the DOM programmatically with template literals + HTML by looping through each cake object in the order array
+      
+static getCakeMarkUpForOrder(orderDesc){
            let cakeHtml = [];
            orderDesc.cakes.forEach(cakeDesc =>{
                cakeHtml.push(`<div class="row">
               <div class="col=8">
               <ul>
-              <li> Flavor: ${cakeDesc.flavor}</li>
-              <li> Frosting: ${cakeDesc.frosting}</li>
-              <li> Number of Layers: ${cakeDesc.layers}</li>
-              <li> Shape: ${cakeDesc.shape}</li>
+              <li><b>Flavor:</b> ${cakeDesc.flavor}</li>
+              <li><b> Frosting:</b> ${cakeDesc.frosting}</li>
+              <li><b> Number of Layers:</b> ${cakeDesc.layers}</li>
+              <li><b> Shape:</b> ${cakeDesc.shape}</li>
               </ul>
               </div>
-              <br>
-              </div>
+
               <div class="col-4">
               <button class="delete-cake btn btn-danger btn-group-sm" id="delete-cake-${cakeDesc.id}"
-              data-cake-id="${cakeDesc.id}" data-order-id="${orderDesc.id}"> Delete Cake</button>
+              data-cake-id="${cakeDesc.id}" data-order-id="${orderDesc.id}"> Delete Cake Order</button>
+              </div>
               </div>`)
            });
            return cakeHtml.join('');
@@ -234,8 +235,8 @@
           </div>
            </div>
           
-          <div class="center">
-         <button class="btn btn-primary  btn-group-sm" id="add-cake-for-order-${orderDesc.id}" data-order-id="${orderDesc.id}">Add New Cake</button>
+          <div class="form-group">
+         <button class="form-control btn" id="add-cake-for-order-${orderDesc.id}" data-order-id="${orderDesc.id}">Add New Cake Order</button>
      </div>`;
    }
 
