@@ -140,7 +140,7 @@ static getCakeMarkUpForOrder(orderDesc){
            let cakeHtml = [];
            orderDesc.cakes.forEach(cakeDesc =>{
                cakeHtml.push(`<div class="row">
-              <div class="col=8">
+              <div class="col-8">
               <ul>
               <li><b>Flavor:</b> ${cakeDesc.flavor}</li>
               <li><b> Frosting:</b> ${cakeDesc.frosting}</li>
