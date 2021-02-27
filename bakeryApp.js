@@ -120,17 +120,19 @@
            return `<div>
            <div class="row">
            <div class="col-8">
-           <h2> Order Name:<small class="text-muted">${orderDesc.name}</small><br>
+           <h4> Order Name:<small class="text-muted">${orderDesc.name}</small><br>
            Baked by:<small class="text-muted">${orderDesc.baker}</small><br>
-           Delivery date:<small class="text-muted">${orderDesc.deliveryDate}</small></h2>
+           Delivery date:<small class="text-muted">${orderDesc.deliveryDate}</small></h4>
            </div>
+           </div>
+
            <div class="col-4">
            <button class="delete-order btn btn-danger btn-group-sm" 
            id="delete-order-${orderDesc.id}" data-order-id="${orderDesc.id}"> Cancel Order</button>
+           
            </div>
            </div>
-           </div>
-           `
+           `;
        }
 
        static getCakeMarkUpForOrder(orderDesc){
